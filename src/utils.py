@@ -2,6 +2,7 @@ import os
 import sys
 from src.exception import CustomException
 import dill
+from sklearn.model_selection import GridSearchCV
 
 import pandas as pd
 import numpy as np
@@ -19,7 +20,7 @@ def save_object(file_path, obj):
     
 
 
-def evaluate_models(models, X_train, y_train, X_test, y_test):
+def evaluate_models(models, X_train, y_train, X_test, y_test, param):
     try:
         report={}
 
